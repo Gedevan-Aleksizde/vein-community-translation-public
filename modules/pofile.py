@@ -19,12 +19,12 @@ def pddf2po(
     if locale is None:
         locale = "ja_JP"
     pof = initializePOFile(lang="ja_JP")
-    for i, r in data.iterrows():
+    for _, r in data.iterrows():
         pof.append(
             polib.POEntry(
-                msgid=r[col_index] + r[col_source],
-                msgtxt=r[col_transl],
-                tcomment=r[col_key],
+                msgid=str(r[col_index]) + "/" + r[col_source],
+                msgstr=str(r[col_transl]),
+                tcomment=str(r[col_key]),
             )
         )
     return pof
@@ -60,10 +60,16 @@ def po2pddf(pofile: polib.POFile) -> pd.DataFrame:
     return:
     """
     d = pd.DataFrame(
-        [(x.msgid, x.msgstr, x.tcomment[0]) for x in pofile if x.msgid != ""],
-        columns=["id", "Translation", "id"],
+        [(x.msgid, x.msgstr, x.tcomment) for x in pofile if x.msgid != ""],
+        columns=["id_source", "Translation", "id"],
     )
-    d["key"] = d["comment"]
-    d["index"] = d["id"].str.replace("^(.+?)/.+$", "\1", regex=True).astype(int)
-    d["source"] = d["id"].str.replace("^.+?/(.+)$", "\1", regex=True)
-    return d
+    d["key"] = d["id"]
+    d["index"] = (
+        d["id_source"].str.replace(r"^([0-9]+?)/.+$", r"\1", regex=True).astype(int)
+    )
+    d["source"] = d["id_source"].str.replace(r"^[0-9]+?/(.+)$", r"\1", regex=True)
+    return (
+        d[["index", "key", "source", "Translation"]]
+        .sort_values(["index"])
+        .drop(columns=["index"])
+    )
