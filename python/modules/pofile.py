@@ -83,20 +83,21 @@ def initializePOFile(
 
 def po2pddf(pofile: polib.POFile) -> pd.DataFrame:
     """
-    input: Po の msgid が index+source
+    output a pandas DataFrame matching UE4localizationsTool's format.
     return:
+
+        pandas.DataFrame that each columns are corresponded to:
+
+        - msgid to source
+        - msgstr to Translation
+        - msgctxt to key
+        - msgtcomment to index
     """
     d = pd.DataFrame(
-        [(x.msgid, x.msgstr, x.tcomment) for x in pofile if x.msgid != ""],
-        columns=["id_source", "Translation", "id"],
+        [(x.msgid, x.msgstr, x.tcomment, x.msgctxt) for x in pofile if x.msgid != ""],
+        columns=["source", "Translation", "index", "key"],
     )
-    d["key"] = d["id"]
-    d["index"] = (
-        d["id_source"].str.replace(r"^([0-9]+?)/.+$", r"\1", regex=True).astype(int)
-    )
-    d["source"] = d["id_source"].str.replace(r"^[0-9]+?/(.+)$", r"\1", regex=True)
     return (
-        d[["index", "key", "source", "Translation"]]
+        d[["key", "source", "Translation", "index"]]
         .sort_values(["index"])
-        .drop(columns=["index"])
     )
