@@ -51,7 +51,7 @@ def pddf2po_crowdin(
                 msgid=str(r[col_source]),
                 msgstr=str(r[col_transl]) if (r[col_source] != r[col_transl]) or r[col_approved] else "",  # FIXME
                 msgctxt=str(r[col_key]),
-                tcomment=str(r[col_key]),
+                tcomment=str(r[col_index]),
             )
         )
     return pof

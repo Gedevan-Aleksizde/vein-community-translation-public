@@ -62,6 +62,8 @@ def main():
     df = df.sort_values(["index"])
     df.assign(Translation=lambda d: d["Translation"].fillna("")).assign(Translation=lambda d: np.where(d["Translation"] == d["source"], "", d["Translation"])).rename(columns={"key": "string ID", "source": "source Text", "index": "label"}).to_csv(dp_crowdin.joinpath("vein0.csv"), index=False)
     df = df.assign(Translation=lambda d: np.where((d["Translation"].isna()) | (d["Translation"]==""), d["source"], d["Translation"]))
+    if not "approved" in df.columns:
+        df["approved"] = False
     print(df)
     pof = pddf2po_crowdin(df)
     if fp_po.exists():
