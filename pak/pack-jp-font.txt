@@ -5,4 +5,4 @@
 "D:\User\Documents\Unreal Projects\VEIN-l10n\public\pak\content\jp\NotoSerifJP-ExtraLight.ttf"          "../../../Vein/Content/Vein/UI/Fonts/FF_Inter-ExtraLight.ufont"
 "D:\User\Documents\Unreal Projects\VEIN-l10n\public\pak\content\jp\NotoSerifJP-ExtraBold-bebaskai.ttf"   "../../../Content/Vein/UI/Fonts/FF_BebasKai.ufont"
 "D:\User\Documents\Unreal Projects\VEIN-l10n\public\pak\content\jp\NotoSerifJP-Bold-us101.ttf"           "../../../Content/Vein/UI/Fonts/US101.ufont"
-"D:\User\Documents\Unreal Projects\VEIN-l10n\public\pak\content\jp\NotoSerifJP-Bold.uasset"              "../../../Content/Vein/UI/Fonts/F_Title.uasset"
+"D:\User\Documents\Unreal Projects\VEIN-l10n\public\pak\content\jp\NotoSansJP-Bold.uasset"              "../../../Content/Vein/UI/Fonts/F_Title.uasset"
