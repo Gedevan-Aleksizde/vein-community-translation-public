@@ -30,6 +30,32 @@ def pddf2po(
     return pof
 
 
+def pddf2po_crowdin(
+    data: pd.DataFrame,
+    locale: str = None,
+    col_key: str = "key",
+    col_source: str = "source",
+    col_transl: str = "Translation",
+    col_index: str = "index",
+) -> polib.POFile:
+    """
+    UE4localizationsTool の制約のため, id を index + source として, key をコメントにする
+    """
+    if locale is None:
+        locale = "ja_JP"
+    pof = initializePOFile(lang="ja_JP")
+    for _, r in data.iterrows():
+        pof.append(
+            polib.POEntry(
+                msgid=str(r[col_source]),
+                msgstr=str(r[col_transl]),
+                msgctxt=str(r[col_key]),
+                tcomment=str(r[col_key]),
+            )
+        )
+    return pof
+
+
 def initializePOFile(
     lang: str, encoding: str = "utf-8", email: Optional[str] = None
 ) -> polib.POFile:
