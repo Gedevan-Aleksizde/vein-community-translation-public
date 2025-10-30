@@ -36,6 +36,7 @@ def pddf2po_crowdin(
     col_key: str = "key",
     col_source: str = "source",
     col_transl: str = "Translation",
+    col_approved: str = "approved", 
     col_index: str = "index",
 ) -> polib.POFile:
     """
@@ -48,7 +49,7 @@ def pddf2po_crowdin(
         pof.append(
             polib.POEntry(
                 msgid=str(r[col_source]),
-                msgstr=str(r[col_transl]),
+                msgstr=str(r[col_transl]) if (r[col_source] != r[col_transl]) or r[col_approved] else "",  # FIXME
                 msgctxt=str(r[col_key]),
                 tcomment=str(r[col_key]),
             )
