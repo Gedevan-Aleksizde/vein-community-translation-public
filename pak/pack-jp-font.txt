@@ -1,5 +1,3 @@
-"D:\User\Documents\Unreal Projects\VEIN-l10n\Pak\Game.locres"                         "../../../Vein/Content/Localization/Game/en/Game.locres"
-"D:\User\Documents\Unreal Projects\VEIN-l10n\Pak\Game2.locres"                        "../../../Vein/Content/Localization/Game/jp/Game.locres"
 "D:\User\Documents\Unreal Projects\VEIN-l10n\Pak\NotoSerifJP-Regular2.ttf"            "../../../Vein/Content/Vein/UI/Fonts/FF_Inter.ufont"
 "D:\User\Documents\Unreal Projects\VEIN-l10n\Pak\NotoSerifJP-Light.ttf"               "../../../Vein/Content/Vein/UI/Fonts/FF_Inter-Light.ufont"
 "D:\User\Documents\Unreal Projects\VEIN-l10n\Pak\NotoSerifJP-Regular4.ttf"            "../../../Vein/Content/Vein/UI/Fonts/FF_Inter-Bold.ufont"
