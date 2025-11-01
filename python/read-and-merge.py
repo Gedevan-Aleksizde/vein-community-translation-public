@@ -4,7 +4,7 @@ import shutil
 import pandas as pd
 import numpy as np
 from modules.pofile import pddf2po_crowdin
-
+import json
 
 
 def get_latest_dir_name(dp: Path):
@@ -12,20 +12,24 @@ def get_latest_dir_name(dp: Path):
     sorted(l)
     return l[-1].name
 
+dp_work = Path(__file__).parent
+
+
 
 dp_text = Path("../text")
 dp_crowdin = dp_text.joinpath("crowdin")
+dp_bak = dp_text.joinpath("bak")
+
+settings = json.load(dp_work.joinpath("settings.json").open("r", encoding="utf-8"))
+version = settings["version"]
+
 fp_text_original = (
-    dp_text.joinpath("original")
-    .joinpath(get_latest_dir_name(dp_text.joinpath("original")))
-    .joinpath("Game.locres.csv")
+    dp_text.joinpath(f"original/{version}/Game.locres.csv")
 )
 fp_text_jp = dp_text.joinpath("Game.locres.csv")
 
 fp_output = dp_text.joinpath("Game.locres.csv")
-fp_po = dp_text.joinpath("vein0.po")
-
-dp_bak = dp_text.joinpath("bak")
+fp_po = dp_text.joinpath(f"vein-{version}.po")
 
 def main():
     print(f"original: {fp_text_original}")
