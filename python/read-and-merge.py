@@ -29,7 +29,7 @@ fp_text_original = (
 fp_text_jp = dp_text.joinpath("Game.locres.csv")
 
 fp_output = dp_text.joinpath("Game.locres.csv")
-fp_po = dp_text.joinpath(f"vein-{version}.po")
+fp_po = dp_text.joinpath(f"vein0.po")
 
 def main():
     print(f"original: {fp_text_original}")
