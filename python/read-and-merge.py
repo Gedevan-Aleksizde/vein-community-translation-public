@@ -1,3 +1,7 @@
+#! /usr/bin/env python3
+# merges a previous PO file with the latest CSV file exported from locres files.
+# now outdated. don't have to use.
+
 from datetime import datetime
 from pathlib import Path
 import shutil
