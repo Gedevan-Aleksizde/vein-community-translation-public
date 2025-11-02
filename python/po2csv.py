@@ -7,15 +7,15 @@ import warnings
 from modules.pofile import po2pddf
 from modules.env import settings
 
-dp_input = Path(settings["inputdir"])
-dp_output = Path("intermed")
+dp_input = settings.inputdir.joinpath("fromcrowdin")
+dp_output = settings.inputdir.joinpath("fromcrowdin-csv")
 
 
 def convertpo2csv(fp: Path) -> bool:
-    lang = fp.parent.parent.name
+    lang = fp.parent.name
     if lang != "en":
         print(f"reading {lang} files: {fp}")
-        fp_output = dp_output.joinpath(f"{lang}/vein0.csv")
+        fp_output = dp_output.joinpath(f"{settings.version}/{lang}/vein0.csv")
         pof = polib.pofile(fp, encoding="utf-8")
         df = po2pddf(pof)
         if not fp_output.parent.exists():
