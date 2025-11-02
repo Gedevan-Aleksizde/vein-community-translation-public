@@ -1,2 +1,0 @@
-"D:\User\Documents\Unreal Projects\VEIN-l10n\public\pak\content\jp\Game.locres"     "../../../Vein/Content/Localization/Game/en/Game.locres"
-"D:\User\Documents\Unreal Projects\VEIN-l10n\public\pak\content\jp\Game2.locres"    "../../../Vein/Content/Localization/Game/jp/Game.locres"

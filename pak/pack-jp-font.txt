@@ -1,2 +1,0 @@
-"D:\User\Documents\Unreal Projects\VEIN-l10n\public\pak\content\jp\mgenplus-2cp-heavy-title.ttf" "../../../Vein/Content/Vein/UI/Fonts/Title.ufont"
-"D:\User\Documents\Unreal Projects\VEIN-l10n\public\pak\content\jp\mgenplus-2cp-heavy-us101.ttf" "../../../Vein/Content/Vein/UI/Fonts/US101.ufont"
