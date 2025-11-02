@@ -40,7 +40,7 @@ def pddf2po_crowdin(
     col_index: str = "index",
 ) -> polib.POFile:
     """
-    UE4localizationsTool の制約のため, id を index + source として, key をコメントにする
+    key will be set to msgctxt (context)
     """
     if locale is None:
         locale = "ja_JP"

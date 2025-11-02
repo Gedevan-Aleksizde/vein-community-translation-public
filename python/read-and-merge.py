@@ -8,24 +8,16 @@ import shutil
 import pandas as pd
 import numpy as np
 from modules.pofile import pddf2po_crowdin
-import json
+from modules.env import settings
 
 
-def get_latest_dir_name(dp: Path):
-    l = list(dp.glob("*"))
-    sorted(l)
-    return l[-1].name
-
-dp_work = Path(__file__).parent
+version = settings.version
 
 
-
-dp_text = Path("../text")
+dp_text = settings.inputdir
 dp_crowdin = dp_text.joinpath("crowdin")
 dp_bak = dp_text.joinpath("bak")
 
-settings = json.load(dp_work.joinpath("settings.json").open("r", encoding="utf-8"))
-version = settings["version"]
 
 fp_text_original = (
     dp_text.joinpath(f"original/{version}/Game.locres.csv")
