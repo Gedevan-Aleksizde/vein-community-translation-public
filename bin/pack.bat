@@ -1,5 +1,6 @@
 @echo off
 
+SET VER=0.022.5
 SET unrealbin64=C:\Program Files\Epic Games\UE_5.4\Engine\Binaries\Win64
 
 CD ..\rawassets
