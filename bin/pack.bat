@@ -1,8 +1,7 @@
 @ECHO OFF
 
-SET VER=0.022.5
-SET UNREALBIN64=C:\Program Files\Epic Games\UE_5.4\Engine\Binaries\Win64
 SET BINDIR=%~dp0
+CALL "%BINDIR%\settings.bat"
 
 SET RELEASEDIR=%BINDIR%..\releases
 

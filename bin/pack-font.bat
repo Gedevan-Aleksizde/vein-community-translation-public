@@ -1,8 +1,7 @@
 @ECHO off
 
-SET VER=0.022.5
-SET UNREALBIN64=C:\Program Files\Epic Games\UE_5.4\Engine\Binaries\Win64
 SET BINDIR=%~dp0
+CALL "%BINDIR%\settings.bat"
 
 REM 1. place font files in rawassets\content\<lang> folder
 REM 2. edit pack-<lang>-font.txt 

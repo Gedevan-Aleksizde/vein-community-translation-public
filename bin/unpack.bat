@@ -1,8 +1,7 @@
 @ECHO OFF
 
-SET VER=0.022.5
-SET STORAGEDIR=D:\User\Documents\Unreal Projects\VEIN-l10n
 SET BINDIR=%~dp0
+CALL "%BINDIR%\settings.bat"
 
 MKDIR "%STORAGEDIR%\tmp-pak"
 MKDIR "%STORAGEDIR%\text\original-locres\%VER%"
