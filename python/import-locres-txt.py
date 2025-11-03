@@ -39,7 +39,8 @@ def merge_locreses(data_en: pd.DataFrame, data_lang: pd.DataFrame) -> pd.DataFra
     if count != count_en:
         warnings.warn(f"Inconsistent row numbers: The English file has {count_en} rows while the transl. file has {count} rows")
     
-    data_en["Translation"] = data_lang["Translation"]    
+    data_en["Translation"] = data_lang["Translation"]
+    data_en = data_en.fillna("")
     return data_en
 
 
@@ -69,6 +70,7 @@ def main():
             df_lang =  read_txt(fp_txt).rename(columns={"text": "Translation"})
             df_merged = merge_locreses(df_en, df_lang)
             df_merged["index"] = [f"{x:04}" for x in range(df_merged.shape[0])]
+            print(df_merged)
             pof = pddf2po_crowdin(df_merged, locale=lang if lang != "jp" else None)
             if not fp_output.parent.exists():
                 fp_output.parent.mkdir(parents=True)
