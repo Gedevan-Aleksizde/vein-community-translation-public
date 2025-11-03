@@ -12,3 +12,4 @@
 "D:\User\Documents\Unreal Projects\VEIN-l10n\public\rawassets\content\jp\mgenplus-2cp-medium-robotoregular.ttf" "../../../Vein/Content/Vein/UI/Fonts/RobotoRegular.ufont"
 "D:\User\Documents\Unreal Projects\VEIN-l10n\public\rawassets\content\jp\mgenplus-2cp-heavy-title.ttf" "../../../Vein/Content/Vein/UI/Fonts/Title.ufont"
 "D:\User\Documents\Unreal Projects\VEIN-l10n\public\rawassets\content\jp\mgenplus-2cp-medium-us101.ttf" "../../../Vein/Content/Vein/UI/Fonts/US101.ufont"
+"D:\User\Documents\Unreal Projects\VEIN-l10n\public\rawassets\content\jp\mgenplus-2cp-regular-fallback.ttf" "../../../Vein/Content/Vein/UI/FF_SourceHanSans_Regular.ufont.ufont"
