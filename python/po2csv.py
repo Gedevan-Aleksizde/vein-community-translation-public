@@ -25,7 +25,7 @@ def convertpo2csv(fp: Path) -> bool:
         if not fp_output.parent.exists():
             fp_output.parent.mkdir(parents=True)
         if not fp_output_locres.exists():
-            fp_output_locres.parent.mkdir(parents=True)
+            fp_output_locres.parent.mkdir(parents=True, exist_ok=True)
         df.to_csv(fp_output, index=False)
         write_as_text_ue4loctool(df, fp_output_locres)
         return True

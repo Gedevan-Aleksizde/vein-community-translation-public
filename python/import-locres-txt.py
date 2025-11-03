@@ -69,15 +69,14 @@ def main():
             print(f"reading {lang} files: {fp_txt.resolve()}")
             df_lang =  read_txt(fp_txt).rename(columns={"text": "Translation"})
             df_merged = merge_locreses(df_en, df_lang)
-            df_merged["index"] = [f"{x:04}" for x in range(df_merged.shape[0])]
-            print(df_merged)
+            df_merged["index"] = [f"{x:06}" for x in range(df_merged.shape[0])]
             pof = pddf2po_crowdin(df_merged, locale=lang if lang != "jp" else None)
             if not fp_output.parent.exists():
                 fp_output.parent.mkdir(parents=True)
             pof.save(fp_output)
     
     df_en["Translation"] = ""
-    df_en["index"] = [f"{x:04}" for x in range(df_merged.shape[0])]
+    df_en["index"] = [f"{x:06}" for x in range(df_merged.shape[0])]
     pof = pddf2po_crowdin(df_en, locale="en_US")
     fp_output_en = dp_output.joinpath(f"en/vein0.po")
     if not fp_output_en.parent.exists():
