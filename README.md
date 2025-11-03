@@ -13,10 +13,10 @@ Nexusのアカウントを既に作っているならNexusからダウンロー�
 
 ### 環境設定
 
-1. VEIN本体に対応したUnreal Editor をダウンロードする
+1. VEIN本体に対応したUnreal Editor をインストールする
 2. uv をインストールする.
 3. このリポジトリをクローンまたはダウンロードする
-4. [UE4 localizations Tool](https://github.com/amrshaheen61/UE4LocalizationsTool) をだうんし, .exe と .dll を bin フォルダにコピーする.
+4. [UE4 localizations Tool](https://github.com/amrshaheen61/UE4LocalizationsTool) をダウンロードし, .exe と .dll を bin フォルダにコピーする.
 5. `bin\settings.bat` を開いてバージョン, 一時保存ディレクトリ, Unreal Editor のバイナリの場所, VEIN のインストールフォルダのパスを設定する. バージョンはこの後の保存用フォルダに使用するだけなので, 厳密に一致しなくともよい.
 
 
