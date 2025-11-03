@@ -2,6 +2,12 @@
 
 コミュニティ (1名)
 
+## ユーザー向けの説明
+
+Nexusのアカウントを既に作っているならNexusからダウンロードできます. 作ってない・作りたくない人は右側の Releases から最新版をダウンロードし, 展開し, でてきた Vein フォルダをVeinのインストールフォルダに上書きしてください. 以下のように2つのファイルがコピーされれば正常にインストールされています.
+
+* `Vein\Vein\Content\Pak\~zzzVein-JP.pak`
+* `Vein\Vein\Content\Pak\~zzzVein-JP-font.pak`
 
 ## 使用方法 (WIP)
 
