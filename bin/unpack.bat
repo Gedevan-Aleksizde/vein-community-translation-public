@@ -8,7 +8,7 @@ MKDIR "%STORAGEDIR%\text\original-locres\%VER%"
 MKDIR "%STORAGEDIR%\text\original-txt\%VER%"
 
 
-"C:\Program Files\Epic Games\UE_5.4\Engine\Binaries\Win64\UnrealPak.exe" "C:\Program Files (x86)\Steam\steamapps\common\Vein\Vein\Content\Paks\pakchunk0-Windows.pak" -extract "%STORAGEDIR%\tmp-pak"
+"%UNREALBIN64%\UnrealPak.exe" "%STEAMDIR%\Vein\Content\Paks\pakchunk0-Windows.pak" -extract "%STORAGEDIR%\tmp-pak"
 XCOPY /s /Y "%STORAGEDIR%\tmp-pak\Vein\Content\Vein\Localization\Game" "%STORAGEDIR%\text\original-locres\%VER%\"
 CD "%STORAGEDIR%\text\original-locres\%VER%"
 
