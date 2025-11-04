@@ -9,7 +9,7 @@ CD "%BINDIR%..\rawassets"
 
 SET ROOTDIR=%CD%
 
-ECHO working dir=%var%
+ECHO working dir=%CD%
 
 FOR /D %%m IN (..\rawassets\content\*) DO (
   ECHO ----- packing %%~nm language files... ------

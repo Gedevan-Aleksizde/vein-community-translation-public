@@ -9,7 +9,7 @@ MKDIR "%STORAGEDIR%\text\original-txt\%VER%"
 
 
 "%UNREALBIN64%\UnrealPak.exe" "%STEAMDIR%\Vein\Content\Paks\pakchunk0-Windows.pak" -extract "%STORAGEDIR%\tmp-pak"
-XCOPY /s /Y "%STORAGEDIR%\tmp-pak\Vein\Content\Vein\Localization\Game" "%STORAGEDIR%\text\original-locres\%VER%\"
+XCOPY /s /Y "%STORAGEDIR%\tmp-pak\Vein\Content\Localization\Game" "%STORAGEDIR%\text\original-locres\%VER%\"
 CD "%STORAGEDIR%\text\original-locres\%VER%"
 
 SET dirloop=%STORAGEDIR%\text\original-locres\%VER%\*
