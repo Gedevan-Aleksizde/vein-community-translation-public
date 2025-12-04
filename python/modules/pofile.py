@@ -36,7 +36,7 @@ def pddf2po_crowdin(
     col_key: str = "key",
     col_source: str = "source",
     col_transl: str = "Translation",
-    col_approved: str = "approved", 
+    col_approved: str = "approved",
     col_index: str = "index",
 ) -> polib.POFile:
     """
@@ -49,7 +49,11 @@ def pddf2po_crowdin(
         pof.append(
             polib.POEntry(
                 msgid=str(r[col_source]),
-                msgstr=str(r[col_transl]) if (r[col_source] != r[col_transl]) or r[col_approved] else "",  # FIXME
+                msgstr=(
+                    str(r[col_transl])
+                    if (r[col_source] != r[col_transl]) or r[col_approved]
+                    else ""
+                ),  # FIXME
                 msgctxt=str(r[col_key]),
                 tcomment=str(r[col_index]),
             )
@@ -84,8 +88,8 @@ def initializePOFile(
 def po2pddf(pofile: polib.POFile) -> pd.DataFrame:
     """
     output a pandas DataFrame matching UE4localizationsTool's format.
-    return:
 
+    return:
         pandas.DataFrame that each columns are corresponded to:
 
         - msgid to source
@@ -97,7 +101,4 @@ def po2pddf(pofile: polib.POFile) -> pd.DataFrame:
         [(x.msgid, x.msgstr, x.tcomment, x.msgctxt) for x in pofile if x.msgid != ""],
         columns=["source", "Translation", "index", "key"],
     )
-    return (
-        d[["key", "source", "Translation", "index"]]
-        .sort_values(["index"])
-    )
+    return d[["key", "source", "Translation", "index"]].sort_values(["index"])
