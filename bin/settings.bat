@@ -1,7 +1,7 @@
-SET VER=<VERSION HERE>
-SET STORAGEDIR=<FILE STORAGE DIRRECTORY HERE>
-SET UNREALBIN64=<hogehohe\UE_5.4\Engine\Binaries\Win64 HERE>
-SET STEAMDIR=<VEIN Installation folder>
+SET VER=0.022.18
+SET STORAGEDIR=D:\User\Documents\Unreal Projects\VEIN-l10n
+SET UNREALBIN64=C:\Program Files\Epic Games\UE_5.4\Engine\Binaries\Win64
+SET STEAMDIR=C:\Program Files (x86)\Steam\steamapps\common\Vein
 
 ECHO VER=%VER%
 ECHO STORAGEDIR=%STORAGEDIR%
