@@ -45,7 +45,7 @@ pd.concat(
             lambda d: (d["key"].str.contains("^Items::BP.+_Name$", regex=True))
         ].assign(category="アイテム"),
         df_comparison.loc[
-            lambda d: (d["key"].str.contains("^Furniture::.+_Name$", regex=True))
+            lambda d: (d["key"].str.contains("^Furniture::", regex=True))
         ].assign(category="家具"),
         df_comparison.loc[
             lambda d: (d["key"].str.contains("^StatPerks::.+_Name$", regex=True))
