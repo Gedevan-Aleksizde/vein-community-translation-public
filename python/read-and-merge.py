@@ -7,12 +7,13 @@ from datetime import datetime
 
 import numpy as np
 import pandas as pd
+import polib
 from modules.env import settings
 from modules.pofile import pddf2po_crowdin, po2pddf
 
 version = settings.version
+LANG = "ja"
 
-import polib
 
 dp_text = settings.inputdir
 dp_crowdin = dp_text.joinpath("from-crowdin")
@@ -22,7 +23,7 @@ dp_bak = dp_text.joinpath("bak")
 # fp_text_original = dp_text.joinpath(f"original-po/{version}/en/vein0.po")
 fp_po_original = dp_text.joinpath(f"original-po/{version}/en/vein0.po")
 fp_text_jp = dp_text.joinpath("Game.locres.csv")
-fp_po_jp = dp_crowdin.joinpath("jp/vein0.po")
+fp_po_jp = dp_crowdin.joinpath(f"{LANG}/vein0.po")
 
 fp_output = dp_text.joinpath("Game.locres.csv")
 fp_po_output = dp_text.joinpath("vein0.po")
