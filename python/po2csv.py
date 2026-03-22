@@ -4,9 +4,8 @@
 from pathlib import Path
 
 import polib
-import warnings
-from modules.pofile import po2pddf
 from modules.env import settings
+from modules.pofile import po2pddf
 from modules.ue4loctool import write_as_text_ue4loctool
 
 dp_input = settings.inputdir.joinpath("from-crowdin")
@@ -32,6 +31,7 @@ def convertpo2csv(fp: Path) -> bool:
     else:
         print("English files skipped")
         return True
+
 
 def main():
     for fp_po in dp_input.rglob("*.po"):
