@@ -1,24 +1,21 @@
 #! /usr/bin/env python3
 # reads English and another language CSVs, merges them, then writes it as a PO file for the each langauge.
 
-from pathlib import Path
-
-import polib
 import warnings
-from modules.pofile import po2pddf
-import pandas as pd
-from modules.pofile import pddf2po_crowdin
+from pathlib import Path
 from typing import List
 
+import pandas as pd
 from modules.env import settings
-
+from modules.pofile import pddf2po_crowdin
 
 version = settings.version
 
 dp_input = settings.inputdir.joinpath(f"original/{version}")
 dp_output = settings.inputdir.joinpath(f"merged/{version}")
 
-fp_csv_en = dp_input.joinpath(f"en/Game.locres.csv")
+fp_csv_en = dp_input.joinpath("en/Game.locres.csv")
+
 
 def merge_locreses(fp_input_en: Path, fp_input: Path) -> pd.DataFrame:
     """
@@ -38,21 +35,29 @@ def merge_locreses(fp_input_en: Path, fp_input: Path) -> pd.DataFrame:
     if count_en > 0:
         warnings.warn(f"English file has {count_en} key duplications")
 
-    df_merged = df_en.drop(columns=["Translation"]).merge(df, on=["key", "source"], how="left").reset_index(drop=True).assign(index=lambda d: d.index, Translation=lambda d: d["Translation"].fillna(""))
+    df_merged = (
+        df_en.drop(columns=["Translation"])
+        .merge(df, on=["key", "source"], how="left")
+        .reset_index(drop=True)
+        .assign(
+            index=lambda d: d.index, Translation=lambda d: d["Translation"].fillna("")
+        )
+    )
     count_merged = count_dup(df_merged, ["key"])
     if count_merged > 0:
         warnings.warn(f"The merged file has {count_en} key duplications")
-    
+
     if df_en.shape[0] != df_merged.shape[0]:
-        warnings.warn(f"Inconsistent row numbers: Englishfile has {df_en.shape[0]} rows while {lang} file has {df.shape[0]} rows")
-    
+        warnings.warn(
+            f"Inconsistent row numbers: Englishfile has {df_en.shape[0]} rows while {lang} file has {df.shape[0]} rows"
+        )
+
     return df_merged
 
 
 def count_dup(data: pd.DataFrame, keys: List[str]) -> int:
     dup = data["key"].value_counts().reset_index().loc[lambda d: d["count"] != 1]
     return dup.shape[0]
-    
 
 
 def main():
