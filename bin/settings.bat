@@ -1,4 +1,4 @@
-SET VER=0.023.2
+SET VER=0.023.4
 SET STORAGEDIR=D:\User\Documents\Unreal Projects\VEIN-l10n
 SET UNREALBIN64=C:\Program Files\Epic Games\UE_5.4\Engine\Binaries\Win64
 SET STEAMDIR=C:\Program Files (x86)\Steam\steamapps\common\Vein
