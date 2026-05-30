@@ -26,7 +26,7 @@ Nexusのアカウントを既に作っているならNexusからダウンロー�
 
 ### POファイルを作成するまで
 
-1. `settings.json`, `python/settings.json` を開いてファイルパスとバージョンが適切であるかを確認する.
+1. `settings.json`, を開いてファイルパスとバージョンが適切であるかを確認する.
 2. `bin\unpack.bat` を実行してVEIN本体のPAKファイルを展開し, 翻訳データをテキストファイルにする.
 3. `uv run python/import-locres-txt.py` を実行し, テキストファイルをPOファイルに変換する.
 4. 出力された PO ファイルを crowdin の source にアップロードするか, もしくはローカルで Poedit などを使って翻訳する.
