@@ -41,6 +41,7 @@ def main(fp_base: Path, fp_comp: Path, fp_out: Path):
     df_updated = update_txt(data_base, data_comp)
     pof = pddf2po_crowdin(df_updated)
     pof.save(fp_out)
+    print(f"output at: {fp_out}")
 
 
 if __name__ == "__main__":
